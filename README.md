@@ -8,15 +8,28 @@ example, with a little salty ocean flavor for fun.
 
 ## Getting Started
 
+0. Clone the repository.
+
+      $ git clone git@bitbucket.org:fareharbor/surfers salty
+      $ cd salty
+
 0. Create a virtual environment.
+
+      $ mkdir ~/python-environments
+      $ virtualenv ~/python-environments/salty
+      $ source ~/python-environments/salty/bin/activate
+
 0. Install dependencies.
+
+      $ pip install -r requirements.txt
+
 0. Create and populate your database.
 
-    $ ./new-db
+      $ ./new-db
 
 0. Run the development server.
 
-    $ ./manage.py runserver_plus
+      $ ./manage.py runserver_plus
 
 0. Visit <http://localhost:8000> in your browser.
 
@@ -31,11 +44,12 @@ worried about the relationships between them, and anyway I wasn't really sure
 what users might actually care about, so I kinda tossed it together haphazardly.
 
 After that we really only have views  (the routing layer is trivial), which
-basically
+basically just render our templates with a bit of data.
 
 # Projects
 
-We've identified a couple of projects you might take on
+We've identified a couple of projects you might take on, involving updating this
+project to add features, fix bugs, or whatnot.
 
 An important consideration in each of these projects is that the implementation
 be "production quality" -- we're not looking for skunkworks approaches that validate
@@ -48,18 +62,20 @@ Is it "Pythonic", whatever that means?) Performance is also a concern: Does
 it use 80 bajillion GB of RAM? Does it do 700 queries? Is it O(N^3) when O(N)
 would do? And of course, at the end of the day, is it correct?
 
+It's therefore better to take a smaller or simpler approach, and nail it, than
+to toss in everything and the kitchen sink in a less-than-quality way.
+
 ## Collaboration Station
 
 Turns out that shapers sometimes collaborate on a new shape, but our data model
 only allows for one shaper per surfboard. Shit! Let's see about updating our
 data model so that surfboards can be shaped by *one or more* shapers. We will also
 want to update our views so that anywhere we are currently display the shaper
-associated
- 
+associated with a surfboard, we instead show all shapers associated with it.
 
 ## This One's a Good One
 
-Finally
+(Surfboard recommendation for a given surfer based on similarity of quiver).
 
 ## It's Not All One-Offs
 
@@ -70,6 +86,4 @@ model, whereby shapers that previously would have several surfboards, would now
 have several models, each with 1 or more surfboards associated with it.  Any
 surfboards that were one-offs would nevertheless get their own surfboard model.
 
-A surfboard model would have a `name` and a `description` at least.  When displaying
-
-In terms of rendering this information to the user, we'd
+A surfboard model would have a `name` and a `description` at least.
