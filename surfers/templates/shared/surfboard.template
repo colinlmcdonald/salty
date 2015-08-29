@@ -1,0 +1,4 @@
+<a href="/surfboards/{{ surfboard.pk }}/">
+  <strong>{{ surfboard.model_name }}</strong>
+  <span class="dimensions">{{ surfboard.display_dimensions }}</span>
+</a>

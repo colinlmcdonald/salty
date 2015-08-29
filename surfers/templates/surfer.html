@@ -1,0 +1,6 @@
+  {% extends "base.template" %}
+
+  {% block content %}
+    {% include 'shared/surfer.template' %}
+    {% include 'shared/surfboards.template' with surfboards=surfer.surfboard_set.all %}
+  {% endblock %}

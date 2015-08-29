@@ -1,0 +1,20 @@
+body {
+    margin: 10px;
+}
+a:hover {
+    text-decoration: inherit;
+}
+
+.face {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.quote {
+    font-style: italic;
+}

@@ -1,0 +1,13 @@
+{% extends "base.template" %}
+
+{% block content %}
+  <h2>{{ shaper.name }}</h2>
+  <h3>{{ shaper.label }}</h3>
+  <h3>Shaping since {{  shaper.shaping_since }}</h3>
+  <p class="bio">
+    {{ shaper.bio }}
+  </p>
+
+  <h3>Surfboards</h3>
+  {% include 'shared/surfboards.template' with surfboards=shaper.surfboard_set.all %}
+{% endblock %}

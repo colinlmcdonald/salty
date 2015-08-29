@@ -1,0 +1,19 @@
+{% extends 'base.template' %}
+
+{% block content %}
+  <h2>Salty Surfers</h2>
+  <p>
+    Hey, this is a silly little website about surfboards.
+  </p>
+
+  <h3>New Surfboards</h3>
+  {% include 'shared/surfboards.template' with surfboards=new_surfboards %}
+
+  <h3>Shaper Updates</h3>
+  {% include 'shared/shapers.template' with shapers=updated_shapers %}
+
+{% endblock %}
+
+{% block quote %}
+  Nobody listens to Turtle.
+{% endblock %}

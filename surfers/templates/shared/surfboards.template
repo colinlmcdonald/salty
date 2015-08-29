@@ -1,0 +1,11 @@
+<ul>
+  {% for surfboard in surfboards %}
+    <li>
+      {% include 'shared/surfboard.template' %}
+    </li>
+  {% empty %}
+    <li>
+      No boards means no waves for {{ surfer.name }}!
+    </li>
+  {% endfor %}
+</ul>
