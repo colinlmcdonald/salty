@@ -1,6 +1,10 @@
   {% extends "base.template" %}
 
   {% block content %}
+    <h2>{{ surfer.name }}</h2>
     {% include 'shared/surfer.template' %}
+    <p class="bio">
+      {{ surfer.bio }}
+    </p>
     {% include 'shared/surfboards.template' with surfboards=surfer.surfboard_set.all %}
   {% endblock %}
