@@ -6,7 +6,21 @@ information about surfboard shapers, the surfboards they shape, and the surfers
 that ride them.  Yes, this is essentially the canonical "Authors and Books" Django
 example, with a little salty ocean flavor for fun.
 
-## Existing Code
+## Getting Started
+
+0. Create a virtual environment.
+0. Install dependencies.
+0. Create and populate your database.
+
+    $ ./new-db
+
+0. Run the development server.
+
+    $ ./manage.py runserver_plus
+
+0. Visit <http://localhost:8000> in your browser.
+
+## Code Overview
 
 As in many (most?) Django applications, the core of Surfers is really the (very simple)
 data model. We have three models: `Surfer` represents individual surfers that might own
@@ -19,7 +33,7 @@ what users might actually care about, so I kinda tossed it together haphazardly.
 After that we really only have views  (the routing layer is trivial), which
 basically
 
-# The Project
+# Projects
 
 We've identified a couple of projects you might take on
 
