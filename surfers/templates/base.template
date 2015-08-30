@@ -1,13 +1,13 @@
 <!doctype html>
 <html>
   <head>
-    <title>Surfin'</title>
+    <title>Salty!</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/style.css">
   </head>
   <body>
     <h1>
-      <a href="/">Surfers!</a>
+      <a href="/">Salty!</a>
     </h1>
 
     {% block content %}
