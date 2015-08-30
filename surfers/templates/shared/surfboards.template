@@ -1,11 +1,24 @@
-<ul>
-  {% for surfboard in surfboards %}
-    <li>
-      {% include 'shared/surfboard.template' %}
-    </li>
-  {% empty %}
-    <li>
+<table class="table table-condensed">
+  
+  {% if surfboards %}
+  
+    <thead>
+      <th>Model</th>
+      <th>Dimensions</th>
+    </thead>
+    
+    {% for surfboard in surfboards %}
+      <tr>
+        {% include 'shared/surfboard.template' %}
+      </tr>
+    {% endfor %}
+
+  {% else %}
+    <tr>
+      <td>
       No boards means no waves for {{ surfer.name }}!
-    </li>
-  {% endfor %}
-</ul>
+      </td>
+    </tr>
+  {% endif %}
+
+</table>
