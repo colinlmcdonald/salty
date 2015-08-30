@@ -98,5 +98,8 @@ surfboards that were one-offs would nevertheless get their own surfboard model.
 A surfboard model would have a `name` and a `description` at least.  After that
 the important concern is again not the fields but the *relationships*. Once you've
 got the data model sorted, update the views to focus attention on surfboard models.
-Finally, make sure you've got a view for an individual model that shows all associated
+Also, make sure you've got a view for an individual model that shows all associated
 surfboards.
+
+Finally, on the list of all models view (`/models/` perhaps?), list all associated
+surfboards as well.
