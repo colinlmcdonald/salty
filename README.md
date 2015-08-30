@@ -1,6 +1,6 @@
-# Surfers
+# Salty!
 
-"Surfers" is a "web application" (very loosely; there's no actual
+"Salty!" is a "web application" (very loosely; there's no actual
 interactivity, just viewing of data -- the R part of a CRUD application) for viewing
 information about surfboard shapers, the surfboards they shape, and the surfers
 that ride them.  Yes, this is essentially the canonical "Authors and Books" Django
@@ -10,7 +10,7 @@ example, with a little salty ocean flavor for fun.
 
 0. Clone the repository.
 
-      $ git clone git@bitbucket.org:fareharbor/surfers salty
+      $ git clone git@bitbucket.org:fareharbor/salty.git salty
       $ cd salty
 
 0. Create a virtual environment.
@@ -35,7 +35,7 @@ example, with a little salty ocean flavor for fun.
 
 ## Code Overview
 
-As in many (most?) Django applications, the core of Surfers is really the (very simple)
+As in many (most?) Django applications, the core of Salty is really the (very simple)
 data model. We have three models: `Surfer` represents individual surfers that might own
 0 (just getting started!), 1, or many surfboards. `Shaper` for shapers that might have made
 0+ surfboards (gotta start somewhere!) and `Surfboard` for the actual surfboards themselves.
@@ -44,7 +44,7 @@ worried about the relationships between them, and anyway I wasn't really sure
 what users might actually care about, so I kinda tossed it together haphazardly.
 
 After that we really only have views  (the routing layer is trivial), which
-basically just render our templates with a bit of data.
+basically just render our templates with a bit of data.  Not a whole lot going on.
 
 # Projects
 
@@ -65,6 +65,11 @@ would do? And of course, at the end of the day, is it correct?
 It's therefore better to take a smaller or simpler approach, and nail it, than
 to toss in everything and the kitchen sink in a less-than-quality way.
 
+Also, you should feel free to change anything and everything about the data
+model, views, routes, and so on -- just remember that this is "already in
+production", so have a migration strategy in mind, even if you don't implement
+it.
+
 ## Collaboration Station
 
 Turns out that shapers sometimes collaborate on a new shape, but our data model
@@ -75,7 +80,11 @@ associated with a surfboard, we instead show all shapers associated with it.
 
 ## This One's a Good One
 
-(Surfboard recommendation for a given surfer based on similarity of quiver).
+Sometimes you're just a surfer looking for a new stick. Come up with a way to 
+determine a recommendation or set of recommendations for a surfer, and add it
+to the surfer view (`/surfers/<pk>/`).  Ideally we're looking for a "good"
+way to recommend a new surfboard for a surfer, so be ready to argue that your
+method is at least halfway decent (`random` I'm looking at you).
 
 ## It's Not All One-Offs
 
@@ -86,4 +95,11 @@ model, whereby shapers that previously would have several surfboards, would now
 have several models, each with 1 or more surfboards associated with it.  Any
 surfboards that were one-offs would nevertheless get their own surfboard model.
 
-A surfboard model would have a `name` and a `description` at least.
+A surfboard model would have a `name` and a `description` at least.  After that
+the important concern is again not the fields but the *relationships*. Once you've
+got the data model sorted, update the views to focus attention on surfboard models.
+Also, make sure you've got a view for an individual model that shows all associated
+surfboards.
+
+Finally, on the list of all models view (`/models/` perhaps?), list all associated
+surfboards as well.
