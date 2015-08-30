@@ -1,6 +1,6 @@
-# Surfers
+# Salty!
 
-"Surfers" is a "web application" (very loosely; there's no actual
+"Salty!" is a "web application" (very loosely; there's no actual
 interactivity, just viewing of data -- the R part of a CRUD application) for viewing
 information about surfboard shapers, the surfboards they shape, and the surfers
 that ride them.  Yes, this is essentially the canonical "Authors and Books" Django
@@ -10,7 +10,7 @@ example, with a little salty ocean flavor for fun.
 
 0. Clone the repository.
 
-      $ git clone git@bitbucket.org:fareharbor/surfers salty
+      $ git clone git@bitbucket.org:fareharbor/salty.git salty
       $ cd salty
 
 0. Create a virtual environment.
@@ -35,7 +35,7 @@ example, with a little salty ocean flavor for fun.
 
 ## Code Overview
 
-As in many (most?) Django applications, the core of Surfers is really the (very simple)
+As in many (most?) Django applications, the core of Salty is really the (very simple)
 data model. We have three models: `Surfer` represents individual surfers that might own
 0 (just getting started!), 1, or many surfboards. `Shaper` for shapers that might have made
 0+ surfboards (gotta start somewhere!) and `Surfboard` for the actual surfboards themselves.
