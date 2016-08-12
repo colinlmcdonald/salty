@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
                 ('description', models.TextField(blank=True)),
                 ('image_url', models.URLField(blank=True)),
                 ('created_at', models.DateField(auto_now_add=True)),
-                ('shaper', models.ForeignKey(to='surfers.Shaper')),
+                ('shapers', models.ManyToManyField(to='surfers.Shaper')),
             ],
         ),
         migrations.CreateModel(

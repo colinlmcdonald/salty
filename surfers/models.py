@@ -29,7 +29,7 @@ class Surfboard(models.Model):
 
     created_at = models.DateField(auto_now_add=True)
 
-    shaper = models.ForeignKey(Shaper)
+    shapers = models.ManyToManyField(Shaper)
     surfer = models.ForeignKey(Surfer)
 
     @property
@@ -46,7 +46,7 @@ class Surfboard(models.Model):
     def __unicode__(self):
         return u'%s by %s (%s)' % (
             self.model_name,
-            self.shaper.name,
+            self.shapers.all(),
             self.display_dimensions,
         )
 

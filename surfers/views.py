@@ -40,6 +40,7 @@ def shaper(request, shaper_pk):
 
 def surfboards(request):
     surfboards = Surfboard.objects.all()
+    print surfboards
     return render(request, 'surfboards.html', {
         'surfboards': surfboards,
     })
@@ -47,6 +48,7 @@ def surfboards(request):
 
 def surfboard(request, surfboard_pk):
     surfboard = get_object_or_404(Surfboard, pk=surfboard_pk)
+    print surfboard
     return render(request, 'surfboard.html', {
         'surfboard': surfboard,
     })
