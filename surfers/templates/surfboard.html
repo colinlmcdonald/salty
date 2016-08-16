@@ -2,9 +2,11 @@
 
 {% block content %}
   <h2>
-    {{ surfboard.model_name }}
+    {{ surfboard.name }}:
     <span class="dimensions">{{ surfboard.display_dimensions }}</span>
   </h2>
+  <h2>Model</h2>
+  {% include 'shared/surfboard_model.template' with surfboard_model=surfboard.surfboard_model %}
 
   <h2>Shaper</h2>
   {% include 'shared/shapers.template' with shapers=surfboard.shapers.all %}

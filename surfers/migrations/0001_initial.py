@@ -25,13 +25,21 @@ class Migration(migrations.Migration):
             name='Surfboard',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('model_name', models.CharField(max_length=200)),
+                ('name', models.CharField(max_length=200)),
                 ('length', models.FloatField()),
                 ('width', models.FloatField()),
                 ('description', models.TextField(blank=True)),
                 ('image_url', models.URLField(blank=True)),
                 ('created_at', models.DateField(auto_now_add=True)),
                 ('shapers', models.ManyToManyField(to='surfers.Shaper')),
+            ],
+        ),
+        migrations.CreateModel(
+            name='SurfboardModel',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.CharField(max_length=200)),
+                ('description', models.TextField(blank=True)),
             ],
         ),
         migrations.CreateModel(

@@ -19,8 +19,15 @@ class Shaper(models.Model):
     def __unicode__(self):
         return u'%s (since %s)' % (self.name, self.shaping_since.year)
 
+class SurfboardModel(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+
+    def __unicode__(self):
+        return u'%s' % (self.name)
+
 class Surfboard(models.Model):
-    model_name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
     length = models.FloatField()
     width = models.FloatField()
 
@@ -29,8 +36,9 @@ class Surfboard(models.Model):
 
     created_at = models.DateField(auto_now_add=True)
 
-    shapers = models.ManyToManyField(Shaper)
+    shapers = models.ManyToManyField(Shaper) #changed from shaper, ForeignKey
     surfer = models.ForeignKey(Surfer)
+    surfboard_model = models.ForeignKey(SurfboardModel, null=True, blank=True)
 
     @property
     def display_length(self):
@@ -44,9 +52,10 @@ class Surfboard(models.Model):
         )
 
     def __unicode__(self):
-        return u'%s by %s (%s)' % (
-            self.model_name,
-            self.shapers.all(),
+        return u'%s by %s (%s) model: %s' % (
+            self.name,
+            self.shapers.all(), #Changed from .name
             self.display_dimensions,
+            self.surfboard_model
         )
 

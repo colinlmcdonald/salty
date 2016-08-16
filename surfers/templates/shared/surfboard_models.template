@@ -1,15 +1,15 @@
 <table class="table table-condensed">
   
-  {% if surfboards %}
+  {% if surfboard_models %}
   
     <thead>
-      <th>Board Name</th>
-      <th>Dimensions</th>
+      <th>Model</th>
+      <th>Description</th>
     </thead>
     
-    {% for surfboard in surfboards %}
+    {% for surfboard_model in surfboard_models %}
       <tr>
-        {% include 'shared/surfboard.template' %}
+        {% include 'shared/surfboard_model.template' %}
       </tr>
     {% endfor %}
 

@@ -1,0 +1,20 @@
+{% extends "base.template" %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-4">
+    
+      <h2>{{ surfboard_model.name }}</h2>    
+      <dl>
+        <dt>Description</dt>
+        <dd>{{ surfboard_model.description }}</dd>
+      </dl>
+  
+    </div>
+
+    <div class="col-md-8">
+      <p class="lead">{{ surfboard_model.name }}'s boards:</p>
+      {% include 'shared/surfboards.template' with surfboards=surfboard_model.surfboard_set.all %}
+    </div>
+  </div>
+{% endblock %}

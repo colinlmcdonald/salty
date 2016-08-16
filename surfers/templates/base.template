@@ -25,6 +25,8 @@
             <li class="{% block nav_home_classes %}{% endblock %}"><a href="/">Home</a></li>
             <li class="{% block nav_surfers_classes %}{% endblock %}"><a href="/surfers/">Surfers</a></li>
             <li class="{% block nav_shapers_classes %}{% endblock %}"><a href="/shapers/">Shapers</a></li>
+            <li class="{% block nav_surfboards_classes %}{% endblock %}"><a href="/surfboards/">Surfboards</a></li>
+            <li class="{% block nav_surfboard_models_classes %}{% endblock %}"><a href="/surfboard_models/">Surfboard Models</a></li>
           </ul>
 
         </div><!--/.nav-collapse -->

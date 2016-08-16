@@ -1,6 +1,6 @@
 <td>
   <a href="/surfboards/{{ surfboard.pk }}/">
-    <strong>{{ surfboard.model_name }}</strong>
+    <strong>{{ surfboard.name }}</strong>
   </a>
 </td>
 

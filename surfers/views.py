@@ -4,10 +4,11 @@ from django.shortcuts import (
 from django.db.models import Max
 
 from surfers.models import (
-    Surfer, Shaper, Surfboard
+    Surfer, Shaper, Surfboard, SurfboardModel
 )
 
 def index(request):
+    print 'hello'
     return render(request, 'index.html', {
         'new_surfboards': Surfboard.objects.order_by('-created_at')[:3],
         'updated_shapers': Shaper.objects.annotate(recent=Max('surfboard__created_at')).order_by('-recent')[:2]
@@ -40,7 +41,6 @@ def shaper(request, shaper_pk):
 
 def surfboards(request):
     surfboards = Surfboard.objects.all()
-    print surfboards
     return render(request, 'surfboards.html', {
         'surfboards': surfboards,
     })
@@ -48,7 +48,19 @@ def surfboards(request):
 
 def surfboard(request, surfboard_pk):
     surfboard = get_object_or_404(Surfboard, pk=surfboard_pk)
-    print surfboard
     return render(request, 'surfboard.html', {
         'surfboard': surfboard,
+    })
+
+def surfboard_models(request):
+    surfboard_models = SurfboardModel.objects.all()
+    print surfboard_models
+    return render(request, 'surfboard_models.html', {
+        'surfboard_models': surfboard_models
+    })
+
+def surfboard_model(request, surfboard_model_pk):
+    surfboard_model = get_object_or_404(SurfboardModel, pk=surfboard_model_pk)
+    return render(request, 'surfboard_model.html', {
+        'surfboard_model': surfboard_model
     })
